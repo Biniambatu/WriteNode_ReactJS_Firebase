@@ -1,8 +1,9 @@
+import PostCard from "../components/PostCard"
 
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div><PostCard/></div>
   )
 }
 

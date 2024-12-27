@@ -3,7 +3,7 @@ import Logo from '../assets/logo.png'
 
 
 const Header = () => {
-  const isAuth = false;
+  const isAuth = true;
   return (
     <header>
       <Link to='/' className="logo">
@@ -14,11 +14,11 @@ const Header = () => {
         <NavLink to='/' className="link">Home</NavLink>
         {isAuth ? (
           <>
-           <NavLink to='/' className="link">Create</NavLink>
-           <button className="auth"><i className="bi bi-box-arrow-right"></i>Logout</button>
+           <NavLink to='/create' className="link">Create</NavLink>
+           <button className="auth"><i className="bi bi-box-arrow-right"></i>  Logout</button>
           </>
         ) : (
-           <button className="auth"><i className="bi bi-google"></i>Login</button>
+           <button className="auth"><i className="bi bi-google"></i>  Login</button>
         )}
         
       </nav>
