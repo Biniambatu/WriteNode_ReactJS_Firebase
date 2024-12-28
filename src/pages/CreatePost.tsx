@@ -1,13 +1,14 @@
 import { addDoc, collection } from "firebase/firestore"
 import { db, auth } from "../FireBase/config"
 import { useNavigate } from "react-router-dom"
+import useTitle from "../hooks/useTitle"
 
 
 const CreatePost = () => {
 
   const postRef = collection(db, "posts")
   const navigate = useNavigate();
-
+  useTitle("Create Post")
   async function handleCreatePost(event){
     event.preventDefault();
     console.log(auth)

@@ -1,14 +1,20 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+const apiKey = import.meta.env.VITE_API_KEY;
+const authDomain = import.meta.env.VITE_authDomain;
+const projectId = import.meta.env.VITE_projectId;
+const storageBucket = import.meta.env.VITE_storageBucket;
+const messagingSenderId = import.meta.env.VITE_messagingSenderId;
+const appId = import.meta.env.VITE_appId;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCpQtpIvZtT9oW1fJwoV5pLd_TrMKWysng",
-  authDomain: "writenode-8ff7b.firebaseapp.com",
-  projectId: "writenode-8ff7b",
-  storageBucket: "writenode-8ff7b.firebasestorage.app",
-  messagingSenderId: "240850175086",
-  appId: "1:240850175086:web:18ca005cff76506add927f"
+  apiKey: apiKey,
+  authDomain: authDomain,
+  projectId: projectId,
+  storageBucket: storageBucket,
+  messagingSenderId: messagingSenderId,
+  appId: appId
 };
 
 

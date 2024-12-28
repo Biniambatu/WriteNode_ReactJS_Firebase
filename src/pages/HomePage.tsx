@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getDocs, collection } from "firebase/firestore"
 import { db } from "../FireBase/config"
 import PostCard from "../components/PostCard"
+import useTitle from "../hooks/useTitle"
 
 
 const HomePage = () => {
@@ -9,6 +10,7 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]) 
   const [toggle, setToggle] = useState(false)
   const postsRef = collection(db, 'posts')
+  useTitle('Home')
 
   useEffect(() => {
    async function getPosts(){
