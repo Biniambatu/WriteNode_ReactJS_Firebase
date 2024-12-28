@@ -7,18 +7,20 @@ import { useState } from "react";
 
 const Header = () => {
   
-  const [isAuth, setIsAuth] = useState(false) 
+  const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem("isAuth")) || false) 
 
   function handleLogin(){
     signInWithPopup(auth, provider).then((result) => {
       setIsAuth(true)
       console.log(result)
+      localStorage.setItem("isAuth", true)
     })
   }
   
   function handleLogout(){
     signOut(auth)
-    setIsAuth(false)
+     setIsAuth(false)
+     localStorage.setItem("isAuth", false)
   }
 
   return (
