@@ -12,7 +12,6 @@ const Header = () => {
   function handleLogin(){
     signInWithPopup(auth, provider).then((result) => {
       setIsAuth(true)
-      console.log(result)
       localStorage.setItem("isAuth", true)
     })
   }

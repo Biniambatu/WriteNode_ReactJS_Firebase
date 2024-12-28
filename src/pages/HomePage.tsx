@@ -3,11 +3,12 @@ import { getDocs, collection } from "firebase/firestore"
 import { db } from "../FireBase/config"
 import PostCard from "../components/PostCard"
 import useTitle from "../hooks/useTitle"
+import SkeletonCard from "../components/SkeletonCard"
 
 
 const HomePage = () => {
 
-  const [posts, setPosts] = useState([]) 
+  const [posts, setPosts] = useState(new Array(2).fill(false))
   const [toggle, setToggle] = useState(false)
   const postsRef = collection(db, 'posts')
   useTitle('Home')
@@ -24,8 +25,13 @@ const HomePage = () => {
 
   return (
     <section>
-      {posts.map((post) => (
-        <PostCard key={post.id} post={post} toggle={toggle} setToggle={setToggle}/>
+      {posts.map((post, index) => (
+        post ? (
+          <PostCard key={post.id} post={post} toggle={toggle} setToggle={setToggle}/>
+        ) : (
+          <SkeletonCard key={index}/>
+        )
+       
       ))}
     </section>
   )
