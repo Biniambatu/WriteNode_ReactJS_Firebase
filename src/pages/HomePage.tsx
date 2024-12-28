@@ -7,6 +7,7 @@ import PostCard from "../components/PostCard"
 const HomePage = () => {
 
   const [posts, setPosts] = useState([]) 
+  const [toggle, setToggle] = useState(false)
   const postsRef = collection(db, 'posts')
 
   useEffect(() => {
@@ -17,12 +18,12 @@ const HomePage = () => {
     )))
   }
   getPosts()
-  },[])
+  },[postsRef,toggle])
 
   return (
     <section>
       {posts.map((post) => (
-        <PostCard key={post.id} post={post} />
+        <PostCard key={post.id} post={post} toggle={toggle} setToggle={setToggle}/>
       ))}
     </section>
   )

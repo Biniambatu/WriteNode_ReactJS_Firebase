@@ -1,10 +1,13 @@
 import { addDoc, collection } from "firebase/firestore"
 import { db, auth } from "../FireBase/config"
+import { useNavigate } from "react-router-dom"
 
 
 const CreatePost = () => {
 
   const postRef = collection(db, "posts")
+  const navigate = useNavigate();
+
   async function handleCreatePost(event){
     event.preventDefault();
     console.log(auth)
@@ -17,6 +20,7 @@ const CreatePost = () => {
       }
     }
     await addDoc(postRef, document)
+    navigate('/')
   }
 
   return (
