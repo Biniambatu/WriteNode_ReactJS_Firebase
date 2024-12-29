@@ -11,7 +11,6 @@ const CreatePost = () => {
   useTitle("Create Post")
   async function handleCreatePost(event){
     event.preventDefault();
-    console.log(auth)
     const document = {
       title: event.target.title.value,
       description: event.target.description.value,
